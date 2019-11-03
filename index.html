@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>one cheese pizza</title>
+</head>
+<body>
+<script>
+//dev tag    
+console.log(`
+    Developed by Brian Moore 🍕
+    https://github.com/onecheesepizza
+    `);
+    
+//meanwhile, pizza mania 
+let pizzaCount=0;
+let maxPizzas=1000;
+let pizzaRate=50; //ms
+pizzaMania();
+
+//pizzaMania def
+function pizzaMania(){
+    //get window dimensions
+    let width=window.innerWidth;
+    let height=window.innerHeight;
+    //set random page position
+    let randomX=Math.floor(Math.floor(Math.random() * width))-100; //-100 pixel offset to more evenly distribute pizzas
+    let randomY=Math.floor(Math.floor(Math.random() * height))-200; //-200 pixel offset to more evenly distribute pizzas
+    //set random pizza size
+    let pizzaSize=Math.floor(Math.floor(Math.random() * 20));
+    //set random pizza rotation
+    let pizzaRotate=Math.floor(Math.floor(Math.random() * 60));
+    //create pizza element with absolute positioning
+    let pizza=document.createElement('pizza');
+    pizza.textContent='🍕';
+    pizza.setAttribute("style", `position:fixed;left:${randomX}px;bottom:${randomY}px;font-size:${pizzaSize}em;transform: rotate(${pizzaRotate}deg);`);
+    //append pizza element to page 
+    document.querySelector('body').append(pizza);
+    //after waiting, increment pizzaCount and call pizzaMania function recursively until maxPizzas is reached
+    setTimeout(function(){ 
+        //increment pizzaCount
+        pizzaCount++;
+        if (pizzaCount<maxPizzas){
+            pizzaMania();
+        }
+    }, pizzaRate);
+}
+</script>
+</body>
+</html>
