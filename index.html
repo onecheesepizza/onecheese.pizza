@@ -7,6 +7,7 @@
     <title>one cheese pizza</title>
 </head>
 <body>
+<pizzas></pizzas>
 <script>
 //dev tag    
 console.log(`
@@ -48,9 +49,15 @@ function addPizza(){
     //create pizza element with fixed positioning
     let pizza=document.createElement('pizza');
     pizza.textContent='🍕';
-    pizza.setAttribute('style', `position: fixed; left: ${randomX}px; bottom: ${randomY}px; font-size: ${pizzaSize}em; transform: rotate(${pizzaRotate}deg);`);
+    pizza.setAttribute('style', `
+        position: fixed; 
+        left: ${randomX}px; 
+        bottom: ${randomY}px; 
+        font-size: ${pizzaSize}em; 
+        transform: rotate(${pizzaRotate}deg);
+    `);
     //append pizza element to page 
-    document.querySelector('body').append(pizza);
+    document.querySelector('pizzas').append(pizza);
 }
 </script>
 </body>
