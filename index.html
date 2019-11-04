@@ -22,7 +22,7 @@ pizzaMania();
 
 //pizzaMania def
 function pizzaMania(){
-    //call addPizza at pizzaRate if pizzaCount< maxPizzas
+    //call addPizza at pizzaRate if pizzaCount < maxPizzas
     let pizzaInterval=setInterval(function(){  
         if (pizzaCount<maxPizzas){
             pizzaCount++;
@@ -45,10 +45,10 @@ function addPizza(){
     let pizzaSize=Math.floor(Math.floor(Math.random() * 20));
     //set random pizza rotation
     let pizzaRotate=Math.floor(Math.floor(Math.random() * 60));
-    //create pizza element with absolute positioning
+    //create pizza element with fixed positioning
     let pizza=document.createElement('pizza');
     pizza.textContent='🍕';
-    pizza.setAttribute("style", `position:fixed;left:${randomX}px;bottom:${randomY}px;font-size:${pizzaSize}em;transform: rotate(${pizzaRotate}deg);`);
+    pizza.setAttribute('style', `position: fixed; left: ${randomX}px; bottom: ${randomY}px; font-size: ${pizzaSize}em; transform: rotate(${pizzaRotate}deg);`);
     //append pizza element to page 
     document.querySelector('body').append(pizza);
 }
