@@ -25,15 +25,13 @@ pizzaMania();
 //pizzaMania def
 function pizzaMania(){
     //at pizzaRate 
-    const pizzaInterval = setInterval(function(){  
+    const pizzaInterval = setInterval(function(){
         // call addPizza if pizzaCount < maxPizzas
         if (pizzaCount<maxPizzas){
-            pizzaCount++;
             addPizza();
-        //otherwise, removePizza before addPizza 
+        //otherwise, removePizza
         } else if (pizzaCount === maxPizzas){
             removePizza();
-            addPizza();
         } else {
             clearInterval(pizzaInterval);
         }
@@ -46,6 +44,8 @@ function removePizza(){
     const pizzas = document.getElementsByTagName("pizzas");
     //remove oldest pizza
     pizzas[0].removeChild(pizzas[0].childNodes[0]);
+    //decrement pizzaCount
+    pizzaCount--;
 };
 
 //addPizza def
@@ -72,6 +72,8 @@ function addPizza(){
     `);
     //append pizza element to page 
     document.querySelector('pizzas').append(pizza);
+    //increment pizzaCount
+    pizzaCount++;
 };
 </script>
 </body>
