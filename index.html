@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>one cheese pizza</title>
+    <title>onecheesepizza</title>
 </head>
 <body>
 <pizzas></pizzas>
@@ -12,21 +12,27 @@
 //dev tag    
 console.log(`
     Developed by Brian Moore 🍕
+    https://onecheesepizza.dev
     https://github.com/onecheesepizza
 `);
     
 //meanwhile, pizza mania 
-let pizzaCount=0;
-let maxPizzas=1000;
-let pizzaRate=50; //ms
+let pizzaCount = 0;
+const maxPizzas = 1000;
+const pizzaRate = 100; //ms
 pizzaMania();
 
 //pizzaMania def
 function pizzaMania(){
-    //call addPizza at pizzaRate if pizzaCount < maxPizzas
-    let pizzaInterval=setInterval(function(){  
+    //at pizzaRate 
+    const pizzaInterval = setInterval(function(){  
+        // call addPizza if pizzaCount < maxPizzas
         if (pizzaCount<maxPizzas){
             pizzaCount++;
+            addPizza();
+        //otherwise, removePizza before addPizza 
+        } else if (pizzaCount === maxPizzas){
+            removePizza();
             addPizza();
         } else {
             clearInterval(pizzaInterval);
@@ -34,21 +40,29 @@ function pizzaMania(){
     }, pizzaRate);
 }
 
+//removePizza def
+function removePizza(){
+    //get all pizzas
+    const pizzas = document.getElementsByTagName("pizzas");
+    //remove oldest pizza
+    pizzas[0].removeChild(pizzas[0].childNodes[0]);
+};
+
 //addPizza def
 function addPizza(){
     //get window dimensions
-    let width=window.innerWidth;
-    let height=window.innerHeight;
+    const width = window.innerWidth;
+    const height = window.innerHeight;
     //set random page position
-    let randomX=Math.floor(Math.random() * width) - 100; //-100 pixel offset to more evenly distribute pizzas
-    let randomY=Math.floor(Math.random() * height) - 200; //-200 pixel offset to more evenly distribute pizzas
+    const randomX = Math.floor(Math.random() * width) - 100; //-100 pixel offset to more evenly distribute pizzas
+    const randomY = Math.floor(Math.random() * height) - 200; //-200 pixel offset to more evenly distribute pizzas
     //set random pizza size
-    let pizzaSize=Math.floor(Math.random() * 20);
+    const pizzaSize = Math.floor(Math.random() * 20);
     //set random pizza rotation
-    let pizzaRotate=Math.floor(Math.random() * 60);
+    const pizzaRotate = Math.floor(Math.random() * 60);
     //create pizza element with fixed positioning
-    let pizza=document.createElement('pizza');
-    pizza.textContent='🍕';
+    const pizza = document.createElement('pizza');
+    pizza.textContent = '🍕';
     pizza.setAttribute('style', `
         position: fixed; 
         left: ${randomX}px; 
@@ -58,7 +72,7 @@ function addPizza(){
     `);
     //append pizza element to page 
     document.querySelector('pizzas').append(pizza);
-}
+};
 </script>
 </body>
 </html>
