@@ -7,6 +7,6 @@
 
 a modern web-based pizza portal. 
 
-### 🍕 live site: [onecheese.pizza](https://onecheese.pizza)
+### 🍕 live site: [pizzamania.onecheesepizza.dev](https://pizzamania.onecheesepizza.dev)
 
 ![Screenshot](onecheesepizza-screenshot.png)
