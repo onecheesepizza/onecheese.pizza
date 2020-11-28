@@ -1,4 +1,4 @@
-# onecheese.pizza
+# pizzamania
 
 ![HTML5](https://img.shields.io/badge/HTML5-orange)
 ![CSS](https://img.shields.io/badge/CSS-blue)
@@ -7,6 +7,6 @@
 
 a modern web-based pizza portal. 
 
-### 🍕 live site: [pizzamania.onecheesepizza.dev](https://pizzamania.onecheesepizza.dev)
+### 🍕 live site: [pizzamania.zebranode.dev](https://pizzamania.zebranode.dev)
 
 ![Screenshot](onecheesepizza-screenshot.png)
