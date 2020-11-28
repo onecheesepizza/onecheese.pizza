@@ -9,4 +9,4 @@ a modern web-based pizza portal.
 
 ### 🍕 live site: [pizzamania.zebranode.dev](https://pizzamania.zebranode.dev)
 
-![Screenshot](onecheesepizza-screenshot.png)
+![Screenshot](pizzamania-screenshot.png)
